@@ -168,8 +168,8 @@ void loop() {
           float t12 ;
           uint16_t h12;
           DHT12.ReadDHTC12_M(&t12, &h12);
-          t12 = t12/10;
-          h12 = h12/10;
+          t12 = t12/10 - 1; //补偿
+          h12 = h12/10 + 3;
           if (isnan(h12) || isnan(t12)) {
               INFOLN("ERROR: Failed to read from DHT sensor!");
             } else {
