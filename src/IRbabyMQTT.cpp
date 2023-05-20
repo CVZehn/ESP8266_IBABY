@@ -22,13 +22,17 @@ void mqttInit()
 bool mqttReconnect()
 {
     bool flag = false;
-    if (ConfigData.containsKey("mqtt"))
+    if (1)//(ConfigData.containsKey("mqtt"))
     {
-        JsonObject mqtt_obj = ConfigData["mqtt"];
-        const char *host = mqtt_obj["host"];
-        int port = mqtt_obj["port"];
-        const char *user = mqtt_obj["user"];
-        const char *password = mqtt_obj["password"];
+        //JsonObject mqtt_obj = ConfigData["mqtt"];
+        //const char *host = mqtt_obj["host"];
+        //int port = mqtt_obj["port"];
+        
+         /*更新位固定 或后续上位机进行更新*/
+        const char *host = "192.168.31.201";
+        int port = 1883;
+        const char *user = "admin";
+        const char *password = "HMZB1527733";
         if (host && port)
         {
             mqtt_client.setServer(host, port);
